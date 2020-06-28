@@ -119,30 +119,20 @@ $(document).ready(function() {
 								
 								
 
-								//var elements = data.elements;
-								//var elements = data;
+								var elements = data.elements;
+								var totalElements = data.total;
 								
-								//window.elementos = elements;
+								if(totalElements>0){ 
 								
-								//var elements = JSON.parse(data);
-								//var elements = JSON.stringify(data.elements);
-								//var totalElements = data.total;
-								
-								
-								//if(totalElements>0){ 
-									
-									//console.log('TOTAL: '+totalElements+' ELEMENTO: '+elements[totalElements-1]);									
-									//var orderStatus = elements[totalElements-1].status;
-									//var orderStatus =data.status;
-									//var orderStatus = elements[totalElements-1].payments[0].status=="rejected";
-									var orderStatus =data.status;
+									var orderStatus = elements[totalElements-1].status;
+									$('#orderStatus').text(orderStatus);
+									$('#loading').html("<img src='assets/img/ajax-loader.gif'>");
 									
 									$('#orderStatus').text(orderStatus);
 									$('#loading').html("<img src='assets/img/ajax-loader.gif'>");
 
 									try{
-										//if(orderStatus=="opened" && elements[totalElements-1].payments[0].status=="rejected"){
-											if(orderStatus=="opened" && orderStatus=="rejected"){
+										if(orderStatus=="opened" && elements[totalElements-1].payments[0].status=="rejected"){
 											// print 
 											if($('#paymentStatusRejected').text()==""){
 												$('#paymentStatusRejected').text(JSON.stringify(data));
@@ -206,13 +196,13 @@ $(document).ready(function() {
 						}, 3000); // finaliza intervalo
 
 					}); // end get pos information
-				/*
+				
 				}else{ // end if total
 
 					$('#qr').html("This External POS ID: 'EPOSID' does not exists<br/>for this Store ID: 'Store_id'".replace("EPOSID",external_id).replace("Store_id",store_id));
 
 				} 
-*/
+
 			});
 
 
