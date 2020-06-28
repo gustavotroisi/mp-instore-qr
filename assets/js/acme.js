@@ -196,13 +196,13 @@ $(document).ready(function() {
 						}, 3000); // finaliza intervalo
 
 					}); // end get pos information
-				
+				/*
 				}else{ // end if total
 
 					$('#qr').html("This External POS ID: 'EPOSID' does not exists<br/>for this Store ID: 'Store_id'".replace("EPOSID",external_id).replace("Store_id",store_id));
 
 				} 
-
+*/
 			});
 
 
