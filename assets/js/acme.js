@@ -153,7 +153,7 @@ $(document).ready(function() {
 
 										
 									} // Fin if
-								//}// Fin totalElements
+								}// Fin totalElements
 							});
 
 							
